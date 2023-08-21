@@ -1,17 +1,22 @@
-import { useState } from 'react'
-
-import './App.css'
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import AddAccount from "./components/addAccount/AddAccount";
+import RepaymentModel from "./components/repayment_model/RepaymentModel";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const { accounts, count } = useSelector((state) => state.accountReducer);
 
   return (
     <>
-      <div className='bg-black w-full h-full text-red-700'>
-        Hello
-      </div> 
+      <Routes>
+        <Route path="/" element={<AddAccount accounts={accounts} count={count} />}/>
+        <Route path="/repayment-calculation" element={<RepaymentModel />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
