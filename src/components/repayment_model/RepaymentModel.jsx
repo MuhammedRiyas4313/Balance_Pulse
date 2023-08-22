@@ -41,7 +41,7 @@ function RepaymentModel() {
           onChange={showRepaymentModel}
         />
       </div>
-      {showGraph ? <RepaymentChart monthlyPayment={monthlyPayment ? monthlyPayment.current.value : 1} initialBalance={initialBalance} /> : <div className="mt-5 text-center"><span>Loading...</span></div> }
+      {showGraph ? <RepaymentChart monthlyPayment={monthlyPayment ? monthlyPayment.current.value : 1} initialBalance={initialBalance} /> : <div className="mt-5 text-center"><span>Enter monthly payment</span></div> }
     </div>
   );
 }
